@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/x-icon" href="PassControl.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PassControl — Software de Gestión para Gimnasios</title>
     <meta name="description" content="PassControl es el sistema de gestión más completo y económico para gimnasios. Control de acceso, socios, finanzas y más.">
@@ -675,11 +674,102 @@
         .fade-up:nth-child(3) { animation-delay: 0.3s; }
         .fade-up:nth-child(4) { animation-delay: 0.4s; }
 
+        /* ── DEMO SECTION ── */
+        .demo-section {
+            background: var(--bg2);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .demo-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 80px;
+        }
+
+        .demo-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .demo-item-rev .demo-screen { order: 2; }
+        .demo-item-rev .demo-info   { order: 1; }
+
+        .demo-screen {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+            background: #0d1117;
+            position: relative;
+        }
+
+        .demo-screen::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 70%, rgba(10,22,40,0.6) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .demo-screen iframe {
+            width: 900px;
+            height: 520px;
+            border: none;
+            transform: scale(0.6);
+            transform-origin: top left;
+            display: block;
+            pointer-events: none;
+        }
+
+        .demo-screen {
+            width: 100%;
+            height: 312px;
+            overflow: hidden;
+        }
+
+        .demo-info {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .demo-num {
+            font-family: "Syne", sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--border);
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .demo-info h3 {
+            font-family: "Syne", sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text);
+        }
+
+        .demo-info p {
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
             nav { padding: 16px 24px; }
             .nav-links { display: none; }
             section { padding: 60px 24px; }
+            .demo-item { grid-template-columns: 1fr; }
+            .demo-item-rev .demo-screen { order: 0; }
+            .demo-item-rev .demo-info   { order: 0; }
+            .demo-section > div { padding: 60px 24px; }
             .stats-bar { padding: 24px; gap: 40px; }
             .highlight-inner { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
             .highlight-visual { display: none; }
@@ -698,6 +788,7 @@
         <li><a href="#funciones">Funciones</a></li>
         <li><a href="#control">Control de Acceso</a></li>
         <li><a href="#precio">Precio</a></li>
+        <li><a href="#demo">Demo</a></li>
         <li><a href="#descarga" class="nav-cta">Descargar</a></li>
     </ul>
 </nav>
@@ -738,12 +829,12 @@
         <span class="lbl">Módulos integrados</span>
     </div>
     <div class="stat-item">
-        <span class="num">+5</span>
+        <span class="num">3</span>
         <span class="lbl">Métodos de acceso</span>
     </div>
     <div class="stat-item">
         <span class="num">100%</span>
-        <span class="lbl">Funciona incluso sin internet</span>
+        <span class="lbl">Funciona sin internet</span>
     </div>
     <div class="stat-item">
         <span class="num">#1</span>
@@ -959,6 +1050,31 @@
     </div>
 </div>
 
+<!-- DEMO -->
+<div class="demo-section" id="demo">
+    <div style="max-width:1200px; margin:0 auto; padding:100px 60px;">
+        <div class="section-tag" style="text-align:center">Vista previa</div>
+        <h2 class="section-title" style="text-align:center">Así se ve PassControl</h2>
+        <p class="section-sub" style="text-align:center; margin:0 auto 60px">
+            Una mirada real al software antes de descargarlo.
+        </p>
+        <div class="demo-grid">
+            <div class="demo-item">
+                <div class="demo-screen"><iframe src="passcontrol_panel_control.html" scrolling="no" loading="lazy"></iframe></div>
+                <div class="demo-info"><span class="demo-num">01</span><div><h3>Panel de Control</h3><p>Todo lo importante de un vistazo: socios activos, accesos del día, cobros del mes y balance. Con gráficos en tiempo real y alertas automáticas.</p></div></div>
+            </div>
+            <div class="demo-item demo-item-rev">
+                <div class="demo-screen"><iframe src="passcontrol_pantalla_acceso.html" scrolling="no" loading="lazy"></iframe></div>
+                <div class="demo-info"><span class="demo-num">02</span><div><h3>Pantalla de Acceso</h3><p>Control de molinete en tiempo real. Muestra nombre, foto, actividad y estado del socio al instante. QR, tarjeta, DNI o huella dactilar.</p></div></div>
+            </div>
+            <div class="demo-item">
+                <div class="demo-screen"><iframe src="passcontrol_socios.html" scrolling="no" loading="lazy"></iframe></div>
+                <div class="demo-info"><span class="demo-num">03</span><div><h3>Gestión de Socios</h3><p>Listado completo con filtros por estado, actividad y mora. Búsqueda instantánea, ficha individual y acciones rápidas desde la misma pantalla.</p></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- PRECIO -->
 <section id="precio" style="text-align:center">
     <div class="section-tag">Precio</div>
@@ -969,7 +1085,7 @@
 
     <div class="pricing-card">
         <div class="pricing-badge">Todo incluido</div>
-        <div class="pricing-price" style="font-size:32px">
+        <div class="pricing-price">
             Consultá<br><small>el precio del mes</small>
         </div>
         <p class="pricing-sub">Pago mensual · Sin contrato · Cancelás cuando quieras</p>
@@ -979,10 +1095,10 @@
             <li><span>✓</span><span>Socios ilimitados</span></li>
             <li><span>✓</span><span>Control de molinete incluido</span></li>
             <li><span>✓</span><span>Soporte y actualizaciones</span></li>
-            <li><span>✓</span><span>Funciona incluso sin internet</span></li>
+            <li><span>✓</span><span>Funciona sin internet</span></li>
         </ul>
         <a href="#descarga" class="btn-primary" style="width:100%; justify-content:center">
-            Descargar y probar →
+            Descargar y probar gratis →
         </a>
     </div>
 </section>
@@ -991,19 +1107,19 @@
 <div class="cta-section" id="descarga">
     <h2>Listo para empezar</h2>
     <p>
-        Descargá PassControl e instalalo. 
+        Descargá PassControl, instalalo y probalo gratis. 
         Cuando estés listo, contactanos para activar tu licencia.
     </p>
     <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-bottom:24px">
-        <a href="https://github.com/PassControlSoft/PassControl/releases/latest" class="btn-primary">
+        <a href="https://github.com/MonziSoft/passcontrol/releases/latest" class="btn-primary">
             ⬇ Descargar PassControl
         </a>
-        <a href="https://wa.me/+5492364368835" class="btn-secondary">
+        <a href="https://wa.me/5492995XXXXXX" class="btn-secondary">
             💬 Contactar por WhatsApp
         </a>
     </div>
     <p style="font-size:13px; color:var(--muted)">
-        Windows 7 / 8 /10 / 11 · 64-bit · ~150 MB
+        Windows 10 / 11 · 64-bit · ~150 MB
     </p>
 </div>
 
@@ -1014,10 +1130,10 @@
     <p style="margin-bottom:8px">Software de gestión para gimnasios</p>
     <p>
         ¿Consultas? Escribinos a 
-        <a href="mailto:contactopasscontrol@gmail.com">contactopasscontrol@gmail.com</a>
+        <a href="mailto:contacto@passcontrol.com">contacto@passcontrol.com</a>
     </p>
     <p style="margin-top:24px; font-size:12px; color:#2a3a4a">
-        © 2026 PassControl By MNZ· Todos los derechos reservados
+        © 2026 PassControl · Todos los derechos reservados
     </p>
 </footer>
 
