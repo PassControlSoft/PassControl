@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
-  "url": "https://github.com/PassControlSoft/PassControl/releases/download/v1.0.0/PassControl_Setup_v1.0.2.exe",
-  "notas": "Correcion de Botones Fantasmas + Mensualidades sin costo"
+  "version": "1.0.3",
+  "url": "https://github.com/PassControlSoft/PassControl/releases/download/v1.0.0/PassControl_Setup_v1.0.3.exe",
+  "notas": "Correccion Refesh Puerto COM"
 }
