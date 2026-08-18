@@ -1,5 +1,5 @@
 {
-  "version": "1.1.0",
-  "url": "https://github.com/PassControlSoft/PassControl/releases/download/v1.0.0/PassControl_Setup_v1.1.0.exe",
-  "notas": "Correccion Finanzas, Lista de socios, Cobranzas"
+  "version": "1.1.1",
+  "url": "https://github.com/PassControlSoft/PassControl/releases/download/v1.0.0/PassControl_Setup_v1.1.1.exe",
+  "notas": "Correccion Finanzas, Lista de socios, Cobranzas, Cumpleaños e inactivos"
 }
